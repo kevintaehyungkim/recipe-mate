@@ -1,0 +1,52 @@
+
+<head>
+	<title>RecipeMate</title>
+	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+
+<header id="header">
+    <div class="content">
+    <nav id="nav">
+        <!-- <ul>
+            <li><a href="/" class="active">HOME</a></li>
+            <li><a href="/users/sign_in">LOG IN</a></li>
+            <li><a href="/users/sign_up">SIGN UP</a></li>
+        </ul> -->
+        <ul>
+		  <li><%= link_to "HOME", root_path %></li>
+		  <% if user_signed_in? %>
+		    <li id="fat-menu" class="dropdown">
+		      <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACCOUNT <b class="caret"></b><a>
+		<!--       <ul class="dropdown-menu"> -->
+		        <li><%= link_to "PROFILE", edit_user_registration_path %></li>
+		        <li><%= link_to "SETTINGS", '#' %></li>
+		        <li><%= link_to "LOG OUT", destroy_user_session_path, :method => :delete %></li>
+		<!--       </ul> -->
+		    </li>
+		  <% else %>
+		    <li><%= link_to "LOG IN", new_user_session_path %></li>
+		    <li><%= link_to "SIGN UP", new_user_registration_path %></li>
+		  <% end %>
+		</ul>
+
+    </nav>
+    </div>
+</header> 
+
+<body>
+	<div id="label">
+		<h2>RecipeMate</h2>
+	</div>
+
+
+	<div id="title">
+		<h1> RecipeMate </h1>
+		<h2> Create. Share. Collaborate. </h2>
+		<h3> Select ingredients and create from hundreds of delicious recipes.</h3>
+		<h3> Missing ingredients? Collaborate with your neighbors!</h3>
+		<div id="signup">
+			<%= link_to "SIGN ME UP", new_user_registration_path, class: "btn btn-large btn-primary" %>
+	    </div>
+	</div>    
+</body>
