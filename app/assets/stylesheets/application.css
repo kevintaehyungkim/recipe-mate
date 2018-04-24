@@ -53,8 +53,31 @@ h2 {
 body {
 	background-color: white;
 	font-family: 'Lato';
-  	background: image-url('1704.jpg'); 
+  	background-image: url('home_background.jpg');
+  	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    /*background-size: cover;*/
+    width: 100%;
 }
+
+/*body:before {
+	position: fixed;
+		width: 100vw;
+		height: 100vh;
+	background-image: : url('home_background.jpg');
+	background-size: cover;
+  	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 222;
+    width: 1200px;
+ 	height: 800px;
+}*/
 
 #nav { width:600px; float: right; margin-top: 5.5px; margin-left: 50.5px;}
 
@@ -78,7 +101,7 @@ body {
 #label{
 	position: absolute;
 	width: 15%;
-	top: 12px;
+	top: 11px;
 	left: 120px;
 	text-align: left;
 	z-index: 20;
@@ -89,7 +112,7 @@ body {
 #title{
 	position: absolute;
 	width: 100%;
-	top: 22%;
+	top: 25%;
 	left: 180px;
 	text-align: left;
 	z-index: 20;
