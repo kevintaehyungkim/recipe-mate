@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'recipes/show'
   # get 'users/show'
   # get 'home/index'
   devise_for :users

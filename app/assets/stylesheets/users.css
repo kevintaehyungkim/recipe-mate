@@ -1,0 +1,105 @@
+/*
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 40px;
+}
+
+
+h4 {
+	font-size: 20px;
+}*/
+
+
+body {
+	background-color: white;
+	font-family: 'Lato';
+  	background-image: none;
+  	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+#welcome{
+	position: absolute;
+	width: 100%;
+	top: 90px;
+	left: 120px;
+	text-align: left;
+	z-index: 20;
+	color: #212B33;
+}
+
+#search {
+	position: absolute;
+/*	top: 500px;*/
+	width: 100%;
+	top:250px;
+/*	border-top: 400px;*/
+
+	left: 120px;
+/*	text-align: left;*/
+	z-index: 20;
+/*	color: #212B33;*/
+}
+
+#searchbox {
+	position: absolute;
+	width: 50%;
+	top:50px;
+}
+
+#searchresults {
+	position: absolute;
+	width: 50%;
+	top:400px;
+	left: 120px;
+}
+
+input[type=text] {
+    width: 200px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("searchicon2.png");
+    background-position: 10px 7px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 46px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+#browse{
+	position: absolute;
+	width: 100%;
+	top: 310px;
+	left: 120px;
+	text-align: left;
+	z-index: 20;
+	color: #212B33;
+}
+
+
+#welcome h2 {
+	color: #E4756E;
+	font-size: 36px;
+}
+
+#welcome h3 {
+	font-size: 40px;
+}
+
+
+#welcome h4 {
+	font-size: 20px;
+}

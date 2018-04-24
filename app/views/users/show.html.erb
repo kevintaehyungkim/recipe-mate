@@ -3,6 +3,7 @@
 	<title>RecipeMate</title>
 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<%= stylesheet_link_tag 'users' %>
 </head>
 
 <header id="header">
@@ -18,9 +19,9 @@
 		  <% if user_signed_in? %>
 		    <li id="fat-menu" class="dropdown">
 		      <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACCOUNT <b class="caret"></b><a>
-			      	<ul class="dropdown-menu">
+			      <!-- 	<ul class="dropdown-menu">
 			      		<li><%= link_to "MY RECIPES", edit_user_registration_path %></li>
-					</ul>
+					</ul> -->
 		        <li><%= link_to "PROFILE", edit_user_registration_path %></li>
 		        <li><%= link_to "LOG OUT", destroy_user_session_path, :method => :delete %></li>
 		    </li>
@@ -35,14 +36,36 @@
 </header> 
 
 <body>
+
 	<div id="label">
 		<h2>RecipeMate</h2>
 	</div>
 
-	<div id="title">
+	<div id="welcome">
 		<h2>Welcome</h2>
-		<h2><%= full_name %></h2>
-		<h3>Search for recipes</h3>
-		<h3>Browse newest recipes</h3>
+		<h3><%= full_name %></h3>
 	</div>    
+
+	<div id="search">
+		<h4> Search Recipes with Selected Ingredients </h4>
+	</div>  
+
+	<div id="searchbox">
+		<form>
+		<%= form_tag(recipes_path, :method => "get", name: "search") do %>
+	    <%= text_field_tag :search, params[:search], placeholder: "Enter ingredients separated by comma" %>
+		<% end %>
+		</form>
+	</div>
+
+	<div id="searchresults">
+		deherro
+		<%= @recipes %>
+
+	</div>
+
+<!-- 	<div id="browse">
+		<h4>Browse newest recipes</h4>
+	</div>   -->
+
 </body>

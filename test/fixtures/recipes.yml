@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  instruction: MyText
+  ingredient: one
+  time: 1
+  total_rating: 1
+  num_ratings: 1
+
+two:
+  name: MyString
+  description: MyText
+  instruction: MyText
+  ingredient: two
+  time: 1
+  total_rating: 1
+  num_ratings: 1
