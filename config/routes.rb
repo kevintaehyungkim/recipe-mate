@@ -3,12 +3,18 @@ Rails.application.routes.draw do
   # get 'users/show'
   # get 'home/index'
   devise_for :users
-  resources :recipes
+  # resources :recipes
+  resources :recipes do
+    resources :comments
+    collection do
+      get :search
+    end
+  end 
   resources :users, only: [:show]
   # resources :users, :controllers => "users"
   root to: 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  post 'recipes/search' => 'recipes#search', as: "search_recipes"
+  # post 'recipes/search' => 'recipes#search', as: "search_recipes"
   post 'recipes/create' => 'recipes#create', as: "create_recipes"
 # match "recipes/create", to: "recipes#create", via: "post"
   # post 'recipes/new' => 'recipes#create'

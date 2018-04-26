@@ -117,8 +117,8 @@ body {
 #title{
 	position: absolute;
 	width: 100%;
-	top: 250px;
-	left: 110px;
+	top: 240px;
+	left: 160px;
 	text-align: left;
 	z-index: 20;
 	color: #212B33;
@@ -133,16 +133,29 @@ body {
 	text-align: left;
 }
 
-#signup{
-	margin-top: 20px;
-/*	left: 56%;
+
+#login {
 	position: absolute;
-}*/
-/*#header {
-	top: 0px;
-	font-family:'Open Sans','Helvetica Neue',Arial;
-	font-size: 12px;
-	font-weight: 100;
-}*/
+	text-align: center;
+	top: 150px;
+	left: 240px;
+	background-color: white;
+	padding: 40px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	border: 1.47px solid #DBE1E8;
+}
+
+#signuppage {
+	position: absolute;
+	text-align: center;
+	top: 150px;
+	left: 240px;
+	background-color: white;
+	padding: 40px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	border: 1.47px solid #DBE1E8;
+}
 
 

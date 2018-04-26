@@ -61,7 +61,7 @@ body {
 #searchbox {
 	position: absolute;
 	width: 50%;
-	top:60px;
+	top:50px;
 }
 
 #searchresults {
@@ -93,14 +93,14 @@ body {
 #browse{
 	position: absolute;
 	width: 100%;
-	top: 480px;
+	top: 280px;
 	left: 120px;
 	text-align: left;
 	z-index: 20;
 	color: #212B33;
 }
 
-#searchrecipes {
+#recipesmain {
 	position: absolute;
 	width: 100%;
 	top: 200px;
@@ -110,11 +110,21 @@ body {
 	color: #212B33;
 }
 
+#searchrecipes {
+	position: absolute;
+	width: 100%;
+	top: 200px;
+	left: 400px;
+	text-align: left;
+	z-index: 20;
+	color: #212B33;
+}
+
 #create{
 	position: absolute;
 	width: 100%;
 	top: 200px;
-	left: 465px;
+	left: 565px;
 	text-align: left;
 	z-index: 20;
 	color: #212B33;

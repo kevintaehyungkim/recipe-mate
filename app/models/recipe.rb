@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :user
+  has_many :comments
   # has_one :image, :as => :imageable
 
   validates_presence_of :name, :description, :instruction, :time
@@ -7,12 +8,12 @@ class Recipe < ApplicationRecord
   # validates :description, length: { maximum: 200 }
   # validates :instruction, length: { maximum: 500 }
 
- #  def self.search(search)
-	# if search
-	#     find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-	#   else
-	#     find(:all)
-	#   end
- #  end
+  def self.search(search)
+    if search
+      self.where("name like ?", "%#{search}%")
+    else
+      self.all
+    end
+  end
 
 end

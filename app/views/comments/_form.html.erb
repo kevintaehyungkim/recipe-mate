@@ -1,0 +1,13 @@
+<head>
+	<title>RecipeMate</title>
+	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<%= stylesheet_link_tag 'recipes' %>   
+</head>   
+
+<%= form_for([@recipe, @recipe.comments.build]) do |f| %>
+	<p>
+		<%= f.text_area :content %><br>
+		<%= f.submit "Post Comment"%>
+	</p>
+<% end %>

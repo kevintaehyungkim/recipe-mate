@@ -3,7 +3,8 @@
 	<title>RecipeMate</title>
 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-	<%= stylesheet_link_tag 'users' %>                                           
+	<%= stylesheet_link_tag 'recipes' %>   
+</head>                                        
 
 <header id="header">
     <div class="content">
@@ -37,8 +38,8 @@
 		</div>
 	</div>   
 
-	<div id="myrecipes">
-		<%= link_to "MY RECIPES", new_recipe_path, class: "btn btn-large btn-primary" %>
+	<div id="searchrecipes">
+		<%= link_to "SEARCH RECIPES", '/recipes', class: "btn btn-large btn-primary" %>
 		<hr>
 	</div>  
 
@@ -54,16 +55,25 @@
 	<div id="recipetitle">
 		<h1><%= @recipe.name %></h1>
 		<h5><%= @recipe.description %></h5>
+		<hr>
 	</div>
 
 	<div id="recipe">
-		<h5>Rating: <%= recipe_rating %></h5>
-		<h5>Time: <%= @recipe.time %> mins</h5>
-		<h5>Instruction: <%= @recipe.instruction %></h5> 
-
-		<%= link_to "Back", recipe_path, class: "btn btn-default" %>
-		<%= link_to "Edit", edit_recipe_path, class: "btn btn-default" %>
-		<%= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default" %>
+		<h5><b>Rating:</b> <%= recipe_rating %></h5>
+		<h5><b>Time:</b> <br><%= @recipe.time %> mins</h5>
+		<h5><b>Instruction:</b> <br> <%= @recipe.instruction %></h5> 
 	</div>
 
+	<div id="comments">
+		<h2>Comments</h2>
+		<hr>
+		<%= @comments.each_with_object(nil) do |r| %>
+		  <p>
+		    <%= r.content %>
+		    <p><%= time_ago_in_words(r.created_at) %></p>
+		    <hr>
+		  </p>
+		<% end %>
+		<%= render 'comments/form' %>
+	</div>
 </body>

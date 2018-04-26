@@ -1,6 +1,5 @@
 class RecipesController < ApplicationController
-  # def show
-  # end
+  before_action only: [:show, :edit, :update, :destroy]
 
   def new 
   	@recipe = Recipe.new
@@ -9,6 +8,7 @@ class RecipesController < ApplicationController
 
   def show
   	@recipe = Recipe.find(params[:id])
+    @comments = Comment.where(recipe_id: @recipe).order("created_at DESC")
   end
 
   def create
@@ -36,18 +36,14 @@ class RecipesController < ApplicationController
   # end
 
   def index
-  	@recipe = Recipe.all
-  	if params[:search]
-  		@recipez = Recipe.where('name LIKE ?', "%#{params[:search]}%")
-      @recipez.each do |r|
-        puts r.name
-      end
-
-      redirect_to '/recipes'
-  	else
-  		@recipe = Recipe.all.order("created_at DESC")
-  	end
+  	@recipe = Recipe.all.order("name ASC")
   end
+
+  def search
+    @recipe = Recipe.all.order("name ASC")
+    @recipe = @recipe.search(params[:search]) if params[:search].present?
+  end
+
 
 
 end

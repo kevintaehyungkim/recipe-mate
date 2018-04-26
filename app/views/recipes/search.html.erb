@@ -42,8 +42,19 @@
 		</div>
 	</div>    
 
-	<div id="browse">
-		<h3>Browse all recipes</h3>
+	<div id="search">
+		<h3> Search Recipes </h3>
+	</div>  
+
+	<div id="searchbox">
+		<form>
+			<%= form_tag(search_recipes_path, :method => "get") do %>
+			   <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+			<% end %>
+		</form>
+	</div>
+
+	<div id="searchresults">
 		<%= @recipe.each_with_object(nil) do |r| %>
 		  <h5>
 		    <%= link_to r.name, r %>
@@ -51,7 +62,7 @@
 		<% end %>
 
 		<% if @recipe.blank? %>
-		<h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+		<p>There are no recipes containing the term '<%= params[:search] %>'.</p>
 		<% end %>
 	</div>  
 
@@ -61,7 +72,7 @@
 	</div>  
 
 	<div id="searchrecipes">
-		<%= link_to "SEARCH RECIPES", '/recipes/search', class: "btn btn-large btn-primary" %>
+		<%= link_to "SEARCH RECIPES", '/recipes', class: "btn btn-large btn-primary" %>
 		<hr>
 	</div>  
 

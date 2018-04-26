@@ -32,6 +32,33 @@
 	<div id="label">
 		<h2>RecipeMate</h2>
 	</div>
+
+	<div id="userphoto">
+        <%=image_tag("morty.png", alt: "Example Image", height: '152')%>
+    </div>
+
+	<div id="welcome">
+		<div id="welcome_container">
+			<h2>Welcome</h2>
+			<h3><%= current_user.first_name %></h3>
+		</div>
+	</div>    
+
+	
+	<div id="recipesmain">
+		<%= link_to "RECIPES", '/recipes', class: "btn btn-large btn-primary" %>
+		<hr>
+	</div>  
+
+	<div id="searchrecipes">
+		<%= link_to "SEARCH RECIPES", '/recipes', class: "btn btn-large btn-primary" %>
+		<hr>
+	</div>  
+
+	<div id="create">
+		<%= link_to "CREATE RECIPE", new_recipe_path, class: "btn btn-large btn-primary" %>
+		<hr>
+	</div>  
 	
 	<div id="newrecipe">
 		<h2> New Recipe </h2>

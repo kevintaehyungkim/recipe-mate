@@ -3,6 +3,7 @@
 	<title>RecipeMate</title>
 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<%= stylesheet_link_tag 'application' %>  
 </head>
 
 <header id="header">
@@ -44,9 +45,8 @@
 
 	<div id="title">
 		<h1> RecipeMate </h1>
-		<h2> Create. Share. Collaborate. </h2>
-		<h3> Select ingredients and create from hundreds of delicious recipes.</h3>
-		<h3> Missing ingredients? Collaborate with your neighbors!</h3>
+		<h2> Search. Share. Create. </h2>
+		<h3> Search from over a trillion delicious recipes!</h3>
 		<div id="signup">
 			<%= link_to "SIGN ME UP", new_user_registration_path, class: "btn btn-large btn-primary" %>
 	    </div>

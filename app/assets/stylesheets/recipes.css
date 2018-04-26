@@ -33,8 +33,8 @@ header {
 	height: 60px; 	
 	position: absolute;
 	margin-top: 0px;
-	background-color: white;
-	z-index: 20;
+	background-color: #F8F8F8;
+	z-index: 30;
 	overflow: hidden;
 	font-weight: lighter;
 }
@@ -64,13 +64,22 @@ header {
 }
 #newrecipe {
 	position: absolute;
-	top: 140px;
+	top: 280px;
 	left: 580px;
-
 	padding: 30px;
 	border-radius: 10px;
 	box-sizing: border-box;
 	border: 1.47px solid #DBE1E8;
+}
+
+#myrecipes{
+	position: absolute;
+	width: 100%;
+	top: 480px;
+	left: 120px;
+	text-align: left;
+	z-index: 20;
+	color: #212B33;
 }
 
 
@@ -82,6 +91,14 @@ header {
 
 #recipe {
 	position: absolute;
+	width: 40%;
 	top: 400px;
 	left: 120px;
+}
+
+#comments {
+	position: absolute;
+	top: 700px;
+	left: 120px;
+	z-index: 40;
 }

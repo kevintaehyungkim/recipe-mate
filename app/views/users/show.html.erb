@@ -42,25 +42,9 @@
 		</div>
 	</div>    
 
-	<div id="search">
-		<h4> Search Recipes with Selected Ingredients </h4>
-	</div>  
-
-	<div id="searchbox">
-		<form>
-			<%= form_tag(recipes_path, :method => "get") do %>
-			   <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-			<% end %>
-		</form>
-	</div>
-
-	<div id="searchresults">
-		<%= @recipe %>
+	<div id="recipesmain">
+		<%= link_to "RECIPES", '/recipes', class: "btn btn-large btn-primary" %>
 		<hr>
-	</div>
-
-	<div id="browse">
-		<h4>Browse newest recipes</h4>
 	</div>  
 
 	<div id="searchrecipes">
@@ -71,6 +55,6 @@
 	<div id="create">
 		<%= link_to "CREATE RECIPE", new_recipe_path, class: "btn btn-large btn-primary" %>
 		<hr>
-	</div>  
+	</div>
 
 </body>
