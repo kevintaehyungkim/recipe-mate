@@ -27,6 +27,17 @@ body {
 #welcome{
 	position: absolute;
 	width: 100%;
+	top: 85px;
+	left: 300px;
+	text-align: left;
+	z-index: 20;
+	color: #212B33;
+}
+
+#userphoto{
+	position: absolute;
+	width: 30px;
+	height: 20px;
 	top: 90px;
 	left: 120px;
 	text-align: left;
@@ -38,7 +49,7 @@ body {
 	position: absolute;
 /*	top: 500px;*/
 	width: 100%;
-	top:250px;
+	top:280px;
 /*	border-top: 400px;*/
 
 	left: 120px;
@@ -50,17 +61,17 @@ body {
 #searchbox {
 	position: absolute;
 	width: 50%;
-	top:50px;
+	top:60px;
 }
 
 #searchresults {
 	position: absolute;
 	width: 50%;
-	top:400px;
+	top:420px;
 	left: 120px;
 }
 
-input[type=text] {
+#searchbox input[type=text] {
     width: 200px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -75,15 +86,35 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
+#searchbox input[type=text]:focus {
     width: 100%;
 }
 
 #browse{
 	position: absolute;
 	width: 100%;
-	top: 310px;
+	top: 480px;
 	left: 120px;
+	text-align: left;
+	z-index: 20;
+	color: #212B33;
+}
+
+#searchrecipes {
+	position: absolute;
+	width: 100%;
+	top: 200px;
+	left: 300px;
+	text-align: left;
+	z-index: 20;
+	color: #212B33;
+}
+
+#create{
+	position: absolute;
+	width: 100%;
+	top: 200px;
+	left: 465px;
 	text-align: left;
 	z-index: 20;
 	color: #212B33;

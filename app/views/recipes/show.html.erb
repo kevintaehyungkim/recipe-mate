@@ -3,8 +3,7 @@
 	<title>RecipeMate</title>
 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-	<%= stylesheet_link_tag 'users' %>
-</head>
+	<%= stylesheet_link_tag 'users' %>                                           
 
 <header id="header">
     <div class="content">
@@ -27,10 +26,6 @@
 
 <body>
 
-	<div id="label">
-		<h2>RecipeMate</h2>
-	</div>
-
 	<div id="userphoto">
         <%=image_tag("morty.png", alt: "Example Image", height: '152')%>
     </div>
@@ -38,33 +33,12 @@
 	<div id="welcome">
 		<div id="welcome_container">
 			<h2>Welcome</h2>
-			<h3><%= full_name %></h3>
+			<h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
 		</div>
-	</div>    
+	</div>   
 
-	<div id="search">
-		<h4> Search Recipes with Selected Ingredients </h4>
-	</div>  
-
-	<div id="searchbox">
-		<form>
-			<%= form_tag(recipes_path, :method => "get") do %>
-			   <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-			<% end %>
-		</form>
-	</div>
-
-	<div id="searchresults">
-		<%= @recipe %>
-		<hr>
-	</div>
-
-	<div id="browse">
-		<h4>Browse newest recipes</h4>
-	</div>  
-
-	<div id="searchrecipes">
-		<%= link_to "SEARCH RECIPES", '/recipes', class: "btn btn-large btn-primary" %>
+	<div id="myrecipes">
+		<%= link_to "MY RECIPES", new_recipe_path, class: "btn btn-large btn-primary" %>
 		<hr>
 	</div>  
 
@@ -72,5 +46,24 @@
 		<%= link_to "CREATE RECIPE", new_recipe_path, class: "btn btn-large btn-primary" %>
 		<hr>
 	</div>  
+
+	<div id="label">
+		<h2>RecipeMate</h2>
+	</div>
+
+	<div id="recipetitle">
+		<h1><%= @recipe.name %></h1>
+		<h5><%= @recipe.description %></h5>
+	</div>
+
+	<div id="recipe">
+		<h5>Rating: <%= recipe_rating %></h5>
+		<h5>Time: <%= @recipe.time %> mins</h5>
+		<h5>Instruction: <%= @recipe.instruction %></h5> 
+
+		<%= link_to "Back", recipe_path, class: "btn btn-default" %>
+		<%= link_to "Edit", edit_recipe_path, class: "btn btn-default" %>
+		<%= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default" %>
+	</div>
 
 </body>

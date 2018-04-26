@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2018_04_24_074410) do
     t.text "instruction"
     t.integer "user_id"
     t.integer "time"
-    t.integer "total_rating"
-    t.integer "num_ratings"
+    t.integer "total_rating", default: 0
+    t.integer "num_ratings", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_recipes_on_user_id"

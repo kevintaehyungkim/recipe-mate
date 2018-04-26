@@ -1,6 +1,86 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
 
-<% if @recipes.blank? %>
-  <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
-<% end %>
+<head>
+	<title>RecipeMate</title>
+	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<%= stylesheet_link_tag 'users' %>                                           
+
+<header id="header">
+    <div class="content">
+    <nav id="nav">
+        <ul>
+		  <li><%= link_to "HOME", root_path %></li>
+		  <% if user_signed_in? %>
+		  		<li><%= link_to "ACCOUNT", new_user_session_path %></li>
+		        <li><%= link_to "PROFILE", edit_user_registration_path %></li>
+		        <li><%= link_to "LOG OUT", destroy_user_session_path, :method => :delete %></li>
+		  <% else %>
+		    <li><%= link_to "LOG IN", new_user_session_path %></li>
+		    <li><%= link_to "SIGN UP", new_user_registration_path %></li>
+		  <% end %>
+		</ul>
+
+    </nav>
+    </div>
+</header> 
+
+
+<body>
+
+	<div id="label">
+		<h2>RecipeMate</h2>
+	</div>
+
+	<div id="userphoto">
+        <%=image_tag("morty.png", alt: "Example Image", height: '152')%>
+    </div>
+
+	<div id="welcome">
+		<div id="welcome_container">
+			<h2>Welcome</h2>
+			<h3><%= current_user.first_name %></h3>
+		</div>
+	</div>    
+
+	<div id="search">
+		<h4> Search Recipes with Selected Ingredients </h4>
+	</div>  
+
+	<div id="searchbox">
+		<form>
+			<%= form_tag(recipes_path, :method => "get") do %>
+			   <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+			<% end %>
+		</form>
+	</div>
+
+	<div id="searchresults">
+		<%= @recipez %>
+	
+		<hr>
+	</div>
+
+	<div id="browse">
+		<h4>Browse newest recipes</h4>
+		<%= @recipe.each_with_object(nil) do |r| %>
+		  <h5>
+		    <%= link_to r.name, r %>
+		  </h5>
+		<% end %>
+
+		<% if @recipe.blank? %>
+		<h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+		<% end %>
+	</div>  
+
+	<div id="searchrecipes">
+		<%= link_to "SEARCH RECIPES", '/recipes', class: "btn btn-large btn-primary" %>
+		<hr>
+	</div>  
+
+	<div id="create">
+		<%= link_to "CREATE RECIPE", new_recipe_path, class: "btn btn-large btn-primary" %>
+		<hr>
+	</div>  
+
+</body>

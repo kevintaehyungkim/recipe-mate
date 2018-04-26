@@ -6,8 +6,8 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.text :instruction
       t.references :user, index: true, foreign_key: true
       t.integer :time
-      t.integer :total_rating
-      t.integer :num_ratings
+      t.integer :total_rating, default: 0
+      t.integer :num_ratings, default: 0
 
       t.timestamps
     end

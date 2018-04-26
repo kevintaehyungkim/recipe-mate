@@ -1,0 +1,47 @@
+
+
+<head>
+	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<%= stylesheet_link_tag 'recipes' %>
+</head>
+
+
+<header id="header">
+    <div class="content">
+    <nav id="nav">
+        <ul>
+		  <li><%= link_to "HOME", root_path %></li>
+		  <% if user_signed_in? %>
+		  		<li><%= link_to "ACCOUNT", new_user_session_path %></li>
+		        <li><%= link_to "PROFILE", edit_user_registration_path %></li>
+		        <li><%= link_to "LOG OUT", destroy_user_session_path, :method => :delete %></li>
+		  <% else %>
+		    <li><%= link_to "LOG IN", new_user_session_path %></li>
+		    <li><%= link_to "SIGN UP", new_user_registration_path %></li>
+		  <% end %>
+		</ul>
+
+    </nav>
+    </div>
+</header> 
+
+
+<body>
+
+	<div id="label">
+		<h2>RecipeMate</h2>
+	</div>
+	
+	<div id="newrecipe">
+		<h2> New Recipe </h2>
+		<%= form_for @recipe do |f| %>
+			Name: <br><%= f.text_field :name %><br>
+			Description:<br> <%= f.text_area :description %><br>
+			Instruction: <br><%= f.text_area :instruction %><br>
+			Time (Minutes): <br> <%= f.number_field :time %><br>
+			<br>
+			<%= f.submit "Create"%>
+		<% end %>
+	</div>
+</body>
