@@ -64,4 +64,3 @@ gem 'devise'
 gem "bootstrap-sass"
 gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'simple_form', '~> 4.0'
-gem 'paperclip', '~> 4.2.0'
