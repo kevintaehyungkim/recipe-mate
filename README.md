@@ -1,24 +1,30 @@
-# README
+**Ruby on Rails Project 2 Write-up**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Title: RecipeMate
+Team Members: Kevin (Taehyung) Kim, Kristine Lin
+Demo Link: 
 
-Things you may want to cover:
+Idea: An application in which users can share and comment on food recipes created by either themselves or other users on the platform. 
 
-* Ruby version
+Models and Description:
+User: 
+- has a first name, last name, email, password
+- has many recipes and comments
 
-* System dependencies
+Recipe: 
+- Has a name, description, instructions on how to make it, time to make
+- belongs to a user, has many comments
 
-* Configuration
+Comment:
+- has text and belongs to both user and recipe
 
-* Database creation
+Features:
+- Users can login/signup
+- Users can create and search recipes
+- Users can comment on recipes
+- Users can change password, update profile
+- Users can logout
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Division of Labor:
+- Kristine: Views, controllers, seed, recipe search. 
+- Kevin: Models, controllers, relationships, views, login, comments

@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
 
   	if @recipe.save
   		flash[:success] = "Sucessfully created new recipe"
-  		redirect_to '/users/' + current_user.id.to_s
+  		redirect_to '/recipes'
   	else 
   		puts @recipe.errors.full_messages
   		redirect_to '/recipes/new', notice: "Couldn't save new recipe"
